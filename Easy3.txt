@@ -1,0 +1,29 @@
+//Given an integer numRows, return the first numRows of Pascal's triangle.
+In Pascal's triangle, each number is the sum of the two numbers directly above it as shown
+
+#include <stdio.h> 
+void printPascal(int n) 
+{ 
+    for (int line = 1; line <= n; line++) { 
+        for (int space = 1; space <= n - line; space++) 
+            printf("  "); 
+        
+        int x = 1; 
+        for (int i = 1; i <= line; i++) { 
+            
+            printf("%4d", x); 
+            x = x * (line - i) / i; 
+        } 
+        printf("\n"); 
+    } 
+} 
+  
+
+int main() 
+{ 
+    int n; 
+    printf("enter the number");
+    scanf("%d",&n);
+    printPascal(n); 
+    return 0; 
+}
